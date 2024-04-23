@@ -56,6 +56,12 @@ settings:
         type: variable-color
         format: hex
         default: '#FC6DAB'
+    -
+        id: inline-code-color
+        title: Inline Code Color
+        type: variable-color
+        format: hex
+        default: '#FC6DAB'
 */
 
 /* Alternative Heading Colour: #C9D1D9 */
@@ -413,8 +419,13 @@ pre[class*='language-'] {
 }
 
 /* Inline code */
+
+.cm-inline-code {
+  color: var(--inline-code-color, var(--color-green-3)) !important;
+}
+
 :not(pre)>code {
-  color: var(--color-green-3) !important;
+  color: var(--inline-code-color, var(--color-green-3)) !important;
 }
 
 :not(pre)>code[class*='language-'] {
